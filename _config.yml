@@ -80,12 +80,12 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: modernist
+theme: hexo-theme-modernist
 exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: github
-  repo: https://github.com/jkeylu/test-hexo-on-travis-ci.git
+  repo: git://github.com/jkeylu/test-hexo-on-travis-ci.git
   branch: gh-pages

@@ -12,10 +12,7 @@ before_script:
   - git config --global user.name 'jKey Lu'
   - git config --global user.email 'jkeylu@gmail.com'
 script:
-  - git remote -v
-  - git clone https://github.com/orderedlist/modernist.git themes/modernist
+  - git clone git://github.com/heroicyang/hexo-theme-modernist.git themes/modernist
   - hexo generate
 after_success:
-  - hexo deploy --setup
-  - git remote -v
   - hexo deploy
