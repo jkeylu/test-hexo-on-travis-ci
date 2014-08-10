@@ -17,11 +17,13 @@ script:
 after_success:
   - hexo deploy --setup
   - cd .deploy
+  - ls -al
   - git remote -v
   - git remote set-url github $DEPLOY_REPO
   - git remote -v
   - cd ..
   - hexo deploy
+  - git remote -v
 env:
   global:
     secure: "AX3eqSK1TkpxThUm4g6HiS4s4sH7CKV48NUPkdLQhcFL57tTDi4p72/rZOEaSOObiSCg3JVZmahodSObPWF2CxFTZp41T7s9rKG9KIGYeM2T4CMsR5Hl0RAH7bymahx1Sst7XrlIaedKCQS9DdayrEtUzxm/t0MCfWUM97svn0k="
