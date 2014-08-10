@@ -23,6 +23,7 @@ after_success:
   - git remote -v
   - cd ..
   - hexo deploy
+  - cd .deploy
   - git remote -v
 env:
   global:
