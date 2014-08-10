@@ -18,6 +18,7 @@ after_success:
   - hexo deploy --setup
   - cd .deploy
   - git remote set-url github $DEPLOY_REPO
+  - git remote -v
   - cd ..
   - hexo deploy
 env:
