@@ -22,6 +22,8 @@ after_success:
   - cp -r ../public/* .
   - git add -A .
   - git commit -m 'Site updated'
+  - git remote -v
+  - git show-ref
   - git push -u github gh-pages
 env:
   global:
