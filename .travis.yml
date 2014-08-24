@@ -20,8 +20,8 @@ after_success:
   - git clone $DEPLOY_REPO --branch gh-pages --single-branch || (git init && git remote add -t gh-pages github $DEPLOY_REPO)
   - rm -rf ./*
   - cp -r ../public/* .
-  - MESSAGE="Site updated: $(date '+%Y-%m-%d %H:%M:%S')"
-  - git commit -m $MESSAGE
+  - git add -A .
+  - git commit -m "Site updated: `date '+%Y-%m-%d %H:%M:%S'`"
   - git push -u github gh-pages
 env:
   global:
