@@ -1,29 +1,30 @@
 language: node_js
 node_js:
-  - 0.1
+- 0.1
 branches:
   only:
-    - master
+  - master
 before_install:
-  - npm install -g hexo
+- npm install -g hexo
 install:
-  - npm install
+- npm install
 before_script:
-  - git config --global user.name 'jKey Lu'
-  - git config --global user.email 'jkeylu@gmail.com'
-  - git clone git://github.com/heroicyang/hexo-theme-modernist.git themes/hexo-theme-modernist
+- git config --global user.name 'jKey Lu'
+- git config --global user.email 'jkeylu@gmail.com'
+- git clone git://github.com/heroicyang/hexo-theme-modernist.git themes/hexo-theme-modernist
 script:
-  - hexo generate
+- hexo generate
 after_success:
-  - mkdir .deploy
-  - cd .deploy
-  - git clone $DEPLOY_REPO --branch gh-pages --single-branch || (git init && git remote add -t gh-pages github $DEPLOY_REPO)
-  - rm -rf ./*
-  - cp -r ../public/* .
-  - git add -A .
-  - git commit -m 'Site updated'
-  - git branch -m gh-pages
-  - git push -u github gh-pages
+- mkdir .deploy
+- cd .deploy
+- git clone $DEPLOY_REPO --branch gh-pages --single-branch || (git init && git remote add -t gh-pages github $DEPLOY_REPO)
+- rm -rf ./*
+- cp -r ../public/* .
+- git add -A .
+- git commit -m 'Site updated'
+- git branch -m gh-pages
+- git push -q -u github gh-pages
+- echo $TRAVIS_BUILD_DIR
 env:
   global:
-    secure: aM50Gp6E2hvUGeQ1XHHwoxlbX01PD9AcaaXvMVwsbrCTS8gNQqb2aYmOz1VIjQxKKETZlQa+HUp+YLQZBoAB2uwerQRmrxRKZSv1XzoXSz7uwPuqtPxyChX+A+yRfIE9+NOHD3bjezgBP0EUE65fALj8r/0ZNqBHMbecyasHnpI=
+    secure: j8xMFmBDjUvqmKwLCWhXG1wKi4DsGGtN6vJ4aBxCp3ka5iusxHKBBHsi465ppbKYZF4eGugoXFT7dknCZyEcdIxxqNhFxY4qjm9K6KWXakVsqMz3YngbqDPFS5UJZr3DUxTlE0RPxkBgty+N1qiAkf2LTm1x4UygKIM7AKINbQE=
