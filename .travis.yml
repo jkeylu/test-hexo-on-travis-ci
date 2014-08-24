@@ -17,14 +17,15 @@ script:
 after_success:
   - mkdir .deploy
   - cd .deploy
-  - git clone $DEPLOY_REPO --branch gh-pages --single-branch || (git init && git branch -m gh-pages && git remote add -t gh-pages github $DEPLOY_REPO)
+  - git clone $DEPLOY_REPO --branch gh-pages --single-branch || (git init && git remote add -t gh-pages github $DEPLOY_REPO)
   - rm -rf ./*
   - cp -r ../public/* .
   - git add -A .
   - git commit -m 'Site updated'
+  - git branch -m gh-pages 
   - git remote -v
   - git show-ref
-  - git push -u github master:gh-pages
+  - git push -u github gh-pages
 env:
   global:
     secure: fr/N/uwijL3F3EB5n1TlcYBsJ6B+/3HW2tl27FsNoe6QHirofE0Y93Qy6bYOByw93CSlBS3oJX421CxreYN0cGueDtFfpcJ9yr3+G3t4GKeg2VNShyIwhC3QMI0Qj7bup/QPM/buSeb2FEotU6Usi5lwOfz1tEfnil5sBTEQbxk=
