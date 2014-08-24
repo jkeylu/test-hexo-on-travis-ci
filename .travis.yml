@@ -21,7 +21,8 @@ after_success:
   - rm -rf ./*
   - cp -r ../public/* .
   - git add -A .
-  - git commit -m "Site updated: `date '+%Y-%m-%d %H:%M:%S'`"
+  - CURRENT_TIIME=$(date '+%Y-%m-%d %H:%M:%S')
+  - git commit -m "Site updated: ${CURRENT_TIIME}"
   - git push -u github gh-pages
 env:
   global:
